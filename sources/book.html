@@ -1,0 +1,193 @@
+<html>
+    
+    <head>
+        <title>Booking</title>
+		<link href="styles.css" rel="stylesheet" type="text/css"/>
+		<script src="scripts.js"></script>
+    </head>
+    
+    <body>
+        
+		<div class="book">
+		
+			<h1 align="center">Book Your Vehicle Now</h1>
+			
+			<form class="marboo" onsubmit="bookingconfirm()" method="post" id="bookingform" action="http://localhost/bookvehicle.php">
+				
+				<fieldset class="fieldsetwidth">
+				
+				<legend><h3>Vehicle Details</h3></legend>
+
+				<table border="0" cellpadding="10px">
+				
+				<tr>
+				<td><b>Select Your Vehicle :</b></td>
+				<td><Select name="vehicle" required>
+					<option value="" hidden>Select the Suitable vehicle</option>
+					<option value="containertruck">Container Truck</option>
+					<option value="tipper">Tipper</option>
+					<option value="watertanker">Water Tanker</option>
+					<option value="fueltanker">Fuel Tanker</option>
+					<option value="gastanker">Gas Tanker</option>
+					<option value="refrigeratedvehicle">Refrigerated Vehicle</option>
+					<option value="concretetruck">Concrete Truck</option>
+					<option value="lorry">Lorry</option>
+					<option value="vehicletruck">Vehicle Truck</option>
+					<option value="battatruck">Batta Truck</option>
+				</select></td>
+				</tr>
+				
+				<tr>
+				<td><b>Number of Vehicle :</b></td>
+				<td><select name="numvehicle" required>
+					<option value="" hidden>Select Number of vehicles</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+				</select></td>
+				</tr>
+				
+				</table>
+				
+				</fieldset>
+				
+				<fieldset class="fieldsetwidth">
+				
+				<legend><h3>Booking Details</h3></legend>
+
+				<table border="0" cellpadding="10px">
+				
+				<tr>
+				<td><b>Date :</b></td>
+				<td><input type="date" name="bookingdate" required min="2018-07-25"></td>
+				</tr>
+				
+				<tr>
+				<td><b>Time :</b></td>
+				<td><input type="time" name="bookingtime" required></td>
+				</tr>
+				
+				<tr>
+				<td><b>Load Up Address :</b></td>
+				<td><textarea required name="loadupadd" rows="4" cols="40" placeholder="Enter the address of the place where the vehicle has to come to take load"></textarea></td>
+				</tr>
+				
+				<tr>
+				<td><b>Contact Number of Load Up Place :</b></td>
+				<td><input required type="text" pattern="[0-9]{10}" size="25" name="loadupnum" placeholder="Enter the Phone Number"></td>
+				</tr>
+				
+				<tr>
+				<td><b>Load Down Address :</b></td>
+				<td><textarea required name="loaddownadd" rows="4" cols="40" placeholder="Enter the address of the place where the vehicle has to handover the load"></textarea></td>
+				</tr>
+				
+				<tr>
+				<td><b>Contact Number of Load Down Place :</b></td>
+				<td><input required type="text" pattern="[0-9]{10}" size="25" name="loaddownnum" placeholder="Enter the Phone Number"></td>
+				</tr>
+				
+				</table>
+				
+				</fieldset>
+				
+				<fieldset class="fieldsetwidth">
+				
+				<legend><h3>Load Details</h3></legend>
+
+				<table border="0" cellpadding="10px">
+				
+				<tr>
+				<td><b>Load :</b></td>
+				<td><input required type="text" size="25" name="loadname" placeholder="Enter the Name of the Load"></td>
+				</tr>
+				
+				<tr>
+				<td><b>Quantity :</b></td>
+				<td><input required type="text" size="25" name="loadquantity" placeholder="Enter the Quantity of the Load"></td>
+				</tr>
+				
+				<tr>
+				<td><b>Load Description :</b></td>
+				<td><textarea required name="loaddes" rows="4" cols="40" placeholder="Enter the Description about your Load"></textarea></td>
+				</tr>
+				
+				</table>
+				
+				</fieldset>
+				
+				<fieldset class="fieldsetwidth">
+				
+				<legend><h3>Customer Details</h3></legend>
+
+				<table border="0" cellpadding="10px">
+				
+				<tr>
+				<td><b>Name :</b></td>
+				<td><input required type="text" pattern="[a-z,A-Z]{1,}" size="35" name="cusname" placeholder="Enter Your Name"></td>
+				</tr>
+				
+				<tr>
+				<td><b>NIC Number :</b></td>
+				<td><input required type="text" pattern="[0-9]{9}[v,V]{1}" size="35" name="cusnic" placeholder="Enter Your NIC Number"></td>
+				</tr>
+				
+				<tr>
+				<td><b>Organization Name :</b></td>
+				<td><input required type="text" size="35" name="cusorg" placeholder="Enter Your Organization or Company"></td>
+				</tr>
+				
+				<tr>
+				<td><b>Contact Number :</b></td>
+				<td><input required type="text" pattern="[0-9]{10}" size="35" name="cusnum" placeholder="Enter Your or Organization's Phone Number"></td>
+				</tr>
+				
+				<tr>
+				<td><b>E-mail ID :</b></td>
+				<td><input required type="email" size="35" name="cusmail" placeholder="Enter Your or Organization's Mail ID"></td>
+				</tr>
+				
+				<tr>
+				<td><b>Address :</b></td>
+				<td><textarea required name="cusadd" rows="4" cols="40" placeholder="Enter Your or Organization's Address"></textarea></td>
+				</tr>
+				
+				</table>
+				
+				</fieldset>
+				
+				<fieldset class="fieldsetwidth">
+				
+				<legend><h3>Place Your Booking</h3></legend>
+
+				<table border="0" cellpadding="10px">
+				
+				<tr>
+					<td><input required type="checkbox" name="acceptterms" value="allcorrect"></td>
+					<td>By Checking this check box I agreed that all the above details are given by me are correct and I accept all the terms & conditions of the Hulk Logistics.</td>
+				</tr>
+				
+				<tr>					
+					<td colspan="2">
+					<input class="butt" type="submit" value="Book My Vehicle">
+					</td>
+				</tr>
+				
+				</table>
+				
+				</fieldset>
+				
+			</form>
+		
+		</div>
+        
+    </body>
+    
+</html>
